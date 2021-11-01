@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+* {
+	box-sizing: border-box;
+}
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-family: 'Lato', sans-serif;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+ul#users-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+ul#users-list li.card {
+	width: 100%;
+	max-width: 300px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	border-radius: 25px;
+	background: #ffffff;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+	overflow: auto;
+}
+
+ul#users-list li.card div.card-main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	padding: 2rem;
+}
+
+ul#users-list li.card div.card-footer {
+	width: 100%;
+
+	background: #eee;
+
+	text-align: center;
+	border-top: solid 1px rgb(211, 211, 211);
+}
+
+div.card-main h2 {
+	margin: 1rem auto 0.5rem;
+}
+
+div.card-main p {
+	margin: 0.25rem 0;
+}
+
+.card-main > figure {
+	width: 150px;
+	height: 150px;
+
+	border-radius: 50%;
+	border: 2px solid rgb(211, 211, 211);
+	overflow: hidden;
+}
+
+.card-main > figure > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
