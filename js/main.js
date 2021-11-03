@@ -23,6 +23,7 @@ const renderElement = ({ id, image, fullname, email, gender, username, country }
 
 const renderList = () => {
     const usersList = document.querySelector("#users-list");
+    //Se guarda un string HTMl con los li de todos los usuarios concatenados
     const usersHTML = users.reduce(
         (list, user) => (list + renderElement(user)),
         ""
@@ -31,13 +32,7 @@ const renderList = () => {
     usersList.innerHTML = usersHTML;
 }
 
-// const fetchUsers2 = (url) => {
-//     return new Promise((resolve, reject) => {
-//         fetch() //logic
-//     })
-// }
-
-// async = return new Promise
+//Fetch functions
 const fetchData = async (url) => {
     let data = undefined;
 
@@ -60,14 +55,22 @@ const fetchData = async (url) => {
     }
 }
 
+// async es equivalente a utilizar return new Promise:
+// const fetchData2 = (url) => {
+//     return new Promise((resolve, reject) => {
+//         fetch() //logic
+//     })
+// }
+
 const timeOut = (time) => {
     return new Promise((resolve) => setTimeout(()=> { resolve() }, time));
 }
 
 const checkUsers = () => {
+    //Array de promesas
     const checkPromises = users.map(
         async (user) => {
-            //2.5 -> 3  2.5 -> 2
+            //Math.ceil 2.5 -> 3, Math.floor  2.5 -> 2
             const seconds = Math.floor(Math.random() * 60);
             await timeOut(seconds * 1000);
 
@@ -91,10 +94,12 @@ const checkUsers = () => {
 // )
 
 const fetchUsers = async () => {
+    // ?? operador para verificar si un dato es null o undefined (nullish coalescing operator)
     users = await fetchData("/data/human_500.json") ?? [];
     renderList();
 }
 
+//Listeners
 const setupListeners = () => {
     const button = document.querySelector("#check-button");
 
